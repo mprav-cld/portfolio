@@ -14,4 +14,4 @@
 2. Settings → Pages → Deploy from branch → main, папка / (root).
 3. Сайт будет на https://mprav-cld.github.io/portfolio/
 
-Резюме для скачивания: `files/Pravosudova_Maria_CV.pdf` — замени файл, если обновишь CV.
+Резюме для скачивания: `files/Pravosudova_Maria_CV_RU.pdf` (русская версия сайта) и `files/Pravosudova_Maria_CV_EN.pdf` (английская). Замени файл с тем же именем, если обновишь CV.
