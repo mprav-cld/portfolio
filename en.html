@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maria Pravosudova — performance creatives</title>
+<meta name="description" content="Motion, static ads and landing pages for performance marketing. Gambling and crypto, Facebook and Google, Tier 1–3 geos.">
+<meta property="og:title" content="Maria Pravosudova — performance creatives">
+<meta property="og:description" content="Motion, static ads and landing pages for performance marketing. Gambling and crypto.">
+<meta property="og:image" content="media/poster/gambl_ad.webp">
+<link rel="alternate" hreflang="ru" href="./">
+<link rel="alternate" hreflang="en" href="en.html">
+<link rel="preload" href="fonts/unbounded-cyrillic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/golos-text-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Unbounded";font-weight:600;font-display:swap;src:url(fonts/unbounded-cyrillic-600-normal.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Unbounded";font-weight:600;font-display:swap;src:url(fonts/unbounded-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20AC}
+@font-face{font-family:"Unbounded";font-weight:700;font-display:swap;src:url(fonts/unbounded-cyrillic-700-normal.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Unbounded";font-weight:700;font-display:swap;src:url(fonts/unbounded-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20AC}
+@font-face{font-family:"Golos";font-weight:400;font-display:swap;src:url(fonts/golos-text-cyrillic-400-normal.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Golos";font-weight:400;font-display:swap;src:url(fonts/golos-text-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20AC}
+@font-face{font-family:"Golos";font-weight:500;font-display:swap;src:url(fonts/golos-text-cyrillic-500-normal.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Golos";font-weight:500;font-display:swap;src:url(fonts/golos-text-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20AC}
+@font-face{font-family:"Golos";font-weight:600;font-display:swap;src:url(fonts/golos-text-cyrillic-600-normal.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Golos";font-weight:600;font-display:swap;src:url(fonts/golos-text-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20AC}
+
+:root{
+  --paper:#EEF0F4;
+  --card:#FFFFFF;
+  --ink:#16171F;
+  --muted:#5C6070;
+  --line:#D7DAE3;
+  --violet:#6B3CF2;
+  --violet-ink:#4B22CC;
+  --signal:#FFD23F;
+  --screen:#16171F;
+  --screen-2:#22232D;
+  --screen-text:#E9EAF0;
+  --screen-muted:#9EA1B2;
+  --display:"Unbounded",system-ui,sans-serif;
+  --body:"Golos",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:clamp(16px,4vw,48px);
+  --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.01em;margin:0}
+h2{font-size:clamp(28px,4vw,48px);line-height:1.1}
+h3{font-size:clamp(19px,1.8vw,24px);line-height:1.2;font-weight:600}
+p{margin:0}
+.lead{font-size:clamp(17px,1.5vw,20px);color:var(--muted);max-width:60ch}
+section{padding:clamp(72px,10vw,128px) 0}
+.sec-head{display:grid;gap:16px;margin-bottom:clamp(32px,5vw,56px)}
+
+/* caption plate — the subtitle style from her videos */
+.cap{display:inline;background:var(--violet);color:#fff;padding:.04em .22em;box-decoration-break:clone;-webkit-box-decoration-break:clone;border-radius:.12em}
+
+/* header */
+.top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.scrolled{border-color:var(--line)}
+.top .wrap{display:flex;align-items:center;gap:24px;height:64px}
+.brand{font-family:var(--display);font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap}
+.nav{display:flex;gap:22px;margin-left:auto;font-size:15px}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;border-radius:999px;border:0;background:var(--violet);color:#fff;font:600 16px/1 var(--body);text-decoration:none;white-space:nowrap;transition:background .15s}
+.btn:hover{background:var(--violet-ink)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn.sm{height:40px;padding:0 18px;font-size:15px}
+.btn svg{width:18px;height:18px;flex:none}
+.lang{display:inline-flex;align-items:center;justify-content:center;height:40px;min-width:46px;padding:0 12px;border-radius:999px;border:1.5px solid var(--line);font:600 14px/1 var(--body);text-decoration:none;color:var(--ink);transition:border-color .15s}
+.lang:hover{border-color:var(--ink)}
+@media (max-width:900px){.nav{display:none}.top .btn{display:none}.lang{margin-left:auto}}
+
+/* hero */
+.hero{padding:clamp(32px,5vw,64px) 0 clamp(56px,8vw,96px);overflow-x:clip}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(32px,4vw,54px);line-height:1.04;letter-spacing:-.02em}
+.hero h1 .cap{line-height:1.32}
+.hero .lead{margin-top:24px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 32px;margin:44px 0 0;padding:24px 0 0;border-top:1px solid var(--line)}
+.facts div{display:grid;gap:2px}
+.facts dt{font-family:var(--display);font-weight:600;font-size:clamp(20px,2vw,26px)}
+.facts dd{margin:0;color:var(--muted);font-size:15px;line-height:1.4}
+.phones{position:relative;display:flex;justify-content:center;align-items:center;gap:clamp(10px,1.6vw,20px);min-height:420px}
+.phone{position:relative;width:clamp(150px,15vw,210px);aspect-ratio:9/19.2;border-radius:30px;background:#0E0F14;padding:7px;box-shadow:0 30px 60px -24px rgba(22,23,31,.45)}
+.phone video,.phone img{width:100%;height:100%;object-fit:cover;border-radius:24px;background:#000}
+.phone-land .screen{position:relative;width:100%;height:100%;border-radius:24px;overflow:hidden;background:#0d1330}
+.phone-land .screen img{position:absolute;top:0;left:0;width:100%;height:auto;max-width:none;border-radius:0}
+@media (prefers-reduced-motion:no-preference){.phone-land .screen img{animation:landscroll 26s ease-in-out 1.2s infinite alternate}}
+@keyframes landscroll{0%,6%{transform:translateY(0)}94%,100%{transform:translateY(calc(-100% + var(--sh,400px)))}}
+@media (max-width:900px){.phone-land .screen{border-radius:18px}}
+.phone::after{content:"";position:absolute;top:13px;left:50%;width:30%;height:13px;margin-left:-15%;border-radius:10px;background:#0E0F14}
+.phones .phone:nth-child(1){transform:translateY(28px) rotate(-4deg)}
+.phones .phone:nth-child(2){transform:translateY(-12px);z-index:2;width:clamp(170px,17vw,236px)}
+.phones .phone:nth-child(3){transform:translateY(40px) rotate(4deg)}
+.phone-tag{position:absolute;left:50%;bottom:-34px;transform:translateX(-50%);font-size:13px;color:var(--muted);white-space:nowrap}
+@media (prefers-reduced-motion:no-preference){
+  .phones .phone{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+  .phones .phone:nth-child(1){animation-delay:.15s}
+  .phones .phone:nth-child(2){animation-delay:0s}
+  .phones .phone:nth-child(3){animation-delay:.3s}
+  @keyframes rise{from{opacity:0;translate:0 60px}to{opacity:1;translate:0 0}}
+}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}
+  .phones{min-height:0;order:-1;margin:0;padding:8px 0 36px;gap:8px;overflow:visible}
+  .phone{width:calc((100vw - 2*var(--gut) - 16px)/3)!important;max-width:170px;border-radius:22px;padding:5px;box-shadow:0 16px 28px -18px rgba(22,23,31,.4)}
+  .phones .phone:nth-child(1){transform:translateY(16px) rotate(-3deg)}
+  .phones .phone:nth-child(2){transform:none}
+  .phones .phone:nth-child(3){transform:translateY(20px) rotate(3deg)}
+  .phone video,.phone img{border-radius:18px}
+  .phone-tag{display:none}
+}
+
+/* cases — dark "editor" section */
+.cases{background:var(--screen);color:var(--screen-text)}
+.cases .lead{color:var(--screen-muted)}
+.case{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:start;padding:clamp(40px,6vw,72px) 0;border-top:1px solid #2E303C}
+.case:first-of-type{border-top:0;padding-top:0}
+.case.wide{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.player{position:relative}
+.player .frame{position:relative;margin:0 auto;border-radius:22px;overflow:hidden;background:#000}
+.player .frame.v{max-width:340px;aspect-ratio:9/16}
+.player .frame.s{max-width:460px;aspect-ratio:1/1}
+.player video{width:100%;height:100%;object-fit:cover;cursor:pointer}
+.player .ctrl{position:absolute;right:12px;top:12px;display:flex;gap:8px}
+.icon-btn{width:40px;height:40px;border-radius:50%;border:0;background:rgba(14,15,20,.72);color:#fff;display:grid;place-items:center;backdrop-filter:blur(6px)}
+.icon-btn svg{width:18px;height:18px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.chip{font-size:13px;line-height:1;padding:7px 10px;border-radius:999px;background:var(--screen-2);color:var(--screen-muted)}
+.case h3{font-size:clamp(22px,2.4vw,32px);margin-bottom:20px}
+.case dl{display:grid;gap:18px;margin:0}
+.case dt{font-weight:600;color:#fff;margin-bottom:4px}
+.case dd{margin:0;color:var(--screen-muted);max-width:62ch}
+
+/* timeline — the one bold element */
+.timeline{margin:28px 0}
+.tl-label{font-size:14px;color:var(--screen-muted);margin-bottom:10px}
+.tl{position:relative;display:flex;height:56px;border-radius:12px;overflow:hidden;background:var(--screen-2)}
+.seg{position:relative;flex:var(--w) 1 0;min-width:0;border:0;border-right:2px solid var(--screen);background:transparent;color:var(--screen-text);text-align:left;padding:8px 10px;display:flex;flex-direction:column;justify-content:space-between;font-size:13px;line-height:1.15;transition:background .15s}
+.seg:last-child{border-right:0}
+.seg:hover{background:#2C2E3A}
+.seg.on{background:var(--violet)}
+.seg .t{font-size:11px;color:var(--screen-muted);font-variant-numeric:tabular-nums}
+.seg.on .t{color:#E4DCFF}
+.seg b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl .head{position:absolute;top:0;bottom:0;left:0;width:2px;background:var(--signal);pointer-events:none;z-index:2}
+.tl-note{margin-top:12px;color:var(--screen-muted);font-size:15px;min-height:3em;max-width:62ch}
+@media (max-width:900px){
+  .case,.case.wide{grid-template-columns:1fr}
+  .seg b{font-size:12px}
+}
+
+/* fill-in markers for Maria */
+
+/* video grid */
+.vgrid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.vcard{position:relative;display:grid;gap:10px;cursor:pointer;border-radius:16px}
+.vcard .thumb{position:relative;border-radius:16px;overflow:hidden;background:#000}
+.vcard video,.vcard img{width:100%;height:100%;object-fit:cover}
+.vcard.r916{grid-column:span 3}.vcard.r916 .thumb{aspect-ratio:9/16}
+.vcard.r11{grid-column:span 4}.vcard.r11 .thumb{aspect-ratio:1/1}
+.vcard.r169{grid-column:span 8}.vcard.r169 .thumb{aspect-ratio:16/9}
+.vcard .play{position:absolute;left:12px;bottom:12px;height:34px;padding:0 12px;border-radius:999px;background:rgba(255,255,255,.92);color:var(--ink);display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
+.vcard .play svg{width:12px;height:12px}
+.vcard .cap-t{font-weight:600}
+.vcard .cap-s{color:var(--muted);font-size:14px;margin-top:-6px}
+@media (max-width:900px){.vcard.r916{grid-column:span 6}.vcard.r11{grid-column:span 6}.vcard.r169{grid-column:span 12}}
+
+
+/* static */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filters button{height:40px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);font-size:15px}
+.filters button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.masonry{--cell:calc((min(100vw,var(--max)) - 2*var(--gut) - 3*14px)/4);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:var(--cell);grid-auto-flow:dense;gap:14px}
+.st{margin:0;position:relative;border-radius:16px;overflow:hidden;background:#1d1e26}
+.st.w2{grid-column:span 2}.st.h2{grid-row:span 2}
+.st .thumb{position:absolute;inset:0;cursor:zoom-in}
+.st img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.st.fit img{object-fit:contain;background:#111}
+.st:hover img{transform:scale(1.03)}
+.st figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:flex-end;gap:8px;padding:28px 14px 12px;font-size:14px;line-height:1.3;color:rgba(255,255,255,.75);background:linear-gradient(transparent,rgba(14,15,20,.82));pointer-events:none}
+.st figcaption b{color:#fff;font-weight:500}
+.st figcaption span{white-space:nowrap}
+.st figcaption{opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s}
+.st:hover figcaption,.st:focus-within figcaption{opacity:1;transform:none}
+@media (hover:none){.st figcaption{display:none}}
+@media (max-width:1100px){.masonry{--cell:calc((100vw - 2*var(--gut) - 2*14px)/3);grid-template-columns:repeat(3,minmax(0,1fr))}}
+.st[hidden]{display:none}
+.more-btn{display:none;width:100%;margin-top:16px;justify-content:center}
+@media (max-width:700px){
+  .masonry{grid-template-columns:1fr 1fr;grid-auto-rows:auto;gap:10px}
+  .st,.st.w2,.st.h2{grid-column:auto;grid-row:auto;aspect-ratio:1/1;border-radius:12px}
+  .st.fit img{object-fit:cover}
+  .st figcaption{padding:20px 8px 8px;font-size:12px}
+  .st figcaption span{display:none}
+  .st figcaption b{font-weight:500}
+  .more-btn{display:inline-flex}
+  .more-btn[hidden]{display:none}
+  .filters{flex-wrap:nowrap;overflow-x:auto;margin:0 calc(var(--gut)*-1) 20px;padding:0 var(--gut);scrollbar-width:none}
+  .filters button{flex:none}
+}
+
+/* landings */
+.lands{display:grid;gap:clamp(48px,7vw,88px)}
+.land{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(24px,4vw,56px);align-items:center}
+.land:nth-child(even){grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr)}
+.land:nth-child(even) .devices{order:2}
+.devices{position:relative;padding-bottom:40px}
+.browser{border-radius:14px;overflow:hidden;background:var(--card);box-shadow:0 24px 50px -28px rgba(22,23,31,.4);border:1px solid var(--line)}
+.browser .bar{height:30px;display:flex;align-items:center;gap:6px;padding:0 12px;border-bottom:1px solid var(--line);background:#F7F8FA}
+.browser .bar i{width:9px;height:9px;border-radius:50%;background:#D3D6DE}
+.scroller{position:relative;container-type:size;overflow:hidden}
+.browser .scroller{aspect-ratio:16/10}
+.scroller img{position:absolute;top:0;left:0;width:100%;height:auto;transition:transform 7s cubic-bezier(.45,0,.55,1)}
+.land:hover .scroller img,.land:focus-within .scroller img{transform:translateY(calc(-100% + 100cqh))}
+.mob{position:absolute;right:-8px;bottom:0;width:26%;min-width:110px;border-radius:22px;background:#0E0F14;padding:5px;box-shadow:0 24px 40px -20px rgba(22,23,31,.5)}
+.land:nth-child(even) .mob{right:auto;left:-8px}
+.mob .scroller{aspect-ratio:9/19;border-radius:17px;background:#fff}
+@media (hover:none){.scroller{overflow-y:auto;-webkit-overflow-scrolling:touch}.scroller img{position:static;transition:none}.land:hover .scroller img{transform:none}}
+@media (prefers-reduced-motion:reduce){.scroller img{transition:none}.land:hover .scroller img{transform:none}}
+.land h3{margin:10px 0 12px}
+.land .kind{color:var(--violet-ink);font-weight:600;font-size:15px}
+.land p{color:var(--muted)}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.stack span{font-size:13px;padding:6px 10px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+.land .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.tilda-card{aspect-ratio:16/10;display:grid;align-content:space-between;padding:clamp(20px,3vw,36px);background:#F4EFE7;color:#2B2A27;border-radius:0 0 14px 14px}
+.tilda-card .t1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(22px,2.6vw,36px);line-height:1.15;max-width:18ch}
+.tilda-card dl{display:flex;gap:clamp(16px,3vw,40px);margin:0}
+.tilda-card dt{font-size:clamp(20px,2.2vw,30px);font-weight:600}
+.tilda-card dd{margin:0;font-size:13px;color:#6E6A62}
+@media (max-width:900px){.land,.land:nth-child(even){grid-template-columns:1fr}.land:nth-child(even) .devices{order:0}.mob{width:30%}}
+
+/* process */
+.light{background:var(--card)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:s;border-top:2px solid var(--ink)}
+.steps li{counter-increment:s;padding:20px 20px 0 0}
+.steps li::before{content:counter(s);display:block;font-family:var(--display);font-weight:700;font-size:40px;line-height:1;color:var(--violet);margin-bottom:14px}
+.steps b{display:block;margin-bottom:6px}
+.steps p{color:var(--muted);font-size:15px}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}.steps li{padding-bottom:16px}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);margin-top:clamp(56px,8vw,96px)}
+@media (max-width:900px){.split{grid-template-columns:1fr}}
+table.diag{width:100%;border-collapse:collapse;font-size:15px}
+.diag th,.diag td{text-align:left;padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.diag th{font-weight:600;color:var(--muted);font-size:14px}
+.diag td:first-child{font-weight:500;width:42%}
+.tools{display:grid;gap:22px}
+.tools h4{margin:0 0 8px;font-size:15px;color:var(--muted);font-weight:500}
+.tools ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tools li{padding:8px 14px;border-radius:999px;background:var(--paper);font-weight:500;font-size:15px}
+.tools li.ai{background:#EDE6FF;color:var(--violet-ink)}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,96px);align-items:center}
+.portrait{margin:0;position:relative;max-width:440px}
+.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:24px}
+.portrait::after{content:"";position:absolute;inset:auto -14px -14px auto;width:42%;height:42%;border-radius:24px;background:var(--violet);z-index:-1}
+.workshop{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(28px,5vw,72px);align-items:start;margin-top:clamp(56px,8vw,96px);padding-top:clamp(32px,4vw,48px);border-top:1px solid var(--line)}
+.workshop h3{margin-bottom:14px}
+.workshop p{color:var(--muted);max-width:44ch}
+.workshop .slides{margin:0}
+@media (max-width:900px){.workshop{grid-template-columns:1fr}}
+.about .txt{display:grid;gap:18px}
+.about .txt p{max-width:58ch}
+.slides{display:grid;gap:12px}
+.slides .main{border-radius:14px;overflow:hidden;aspect-ratio:16/9;background:#232323}
+.slides .main img{width:100%;height:100%;object-fit:contain}
+.slides .row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.slides .row button{flex:0 0 22%;padding:0;border:2px solid transparent;border-radius:8px;overflow:hidden;background:#232323;aspect-ratio:16/9}
+.slides .row button[aria-current="true"]{border-color:var(--violet)}
+.slides .row img{width:100%;height:100%;object-fit:cover}
+.slides figcaption{font-size:14px;color:var(--muted)}
+@media (max-width:900px){.about .wrap{grid-template-columns:1fr}.portrait{max-width:300px}}
+
+/* contact */
+.contact{background:var(--violet);color:#fff}
+.contact h2{font-size:clamp(32px,5.5vw,72px);line-height:1.04;max-width:16ch}
+.contact .lead{color:#E2D9FF;margin-top:20px}
+.contact .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.contact .btn{background:#fff;color:var(--violet-ink)}
+.contact .btn:hover{background:var(--signal);color:var(--ink)}
+.contact .btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px #fff}
+.contact .btn.ghost:hover{background:#fff;color:var(--violet-ink)}
+.contact-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.3);font-size:15px}
+.contact-list span{display:block;color:#CFC2FF;margin-bottom:2px}
+.contact-list a{text-decoration:none;font-weight:500}
+.contact-list a:hover{text-decoration:underline}
+@media (max-width:700px){.contact-list{grid-template-columns:1fr}}
+footer{padding:28px 0 100px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* sticky mobile CTA */
+.dock{position:fixed;left:16px;right:16px;bottom:16px;z-index:50;display:none}
+.dock .btn{width:100%;justify-content:center;box-shadow:0 12px 30px -10px rgba(75,34,204,.6)}
+@media (max-width:900px){.dock{display:block}}
+.dock.hide{display:none}
+
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(96vw,1100px);max-height:92vh;overflow:visible}
+dialog.lb::backdrop{background:rgba(14,15,20,.88)}
+.lb-inner{position:relative;display:grid;place-items:center}
+.lb video,.lb img{max-width:min(96vw,1100px);max-height:86vh;border-radius:14px;background:#000}
+.lb .close{position:absolute;top:-52px;right:0;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:var(--ink);font-size:22px;line-height:1}
+.lb .lb-cap{color:#C9CBD6;font-size:14px;margin-top:10px;text-align:center}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#">Maria Pravosudova</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#cases">Breakdowns</a>
+      <a href="#video">Video</a>
+      <a href="#static">Static</a>
+      <a href="#landings">Landings & websites</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="lang" href="./" hreflang="ru" lang="ru" aria-label="Русская версия">RU</a>
+    <a class="btn sm" href="https://t.me/mkwutro" target="_blank" rel="noopener">Message me on Telegram</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Creatives for performance: <span class="cap">video,&nbsp;static, landings</span></h1>
+      <p class="lead">Motion and creative designer in gambling and crypto. I work from the media buyer’s brief: I plan the hook, offer and CTA, and build videos in After Effects and an AI pipeline. I also take on the landing page for the creative: the design is mine, and I build the code together with Claude.</p>
+      <div class="actions">
+        <a class="btn" href="https://t.me/mkwutro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1.1-1 .2-1.5L20.5 2.8c.9-.3 1.6.2 1.4 1.5z"/></svg>Message me on Telegram</a>
+        <a class="btn ghost" href="#cases">See breakdowns</a>
+      </div>
+      <dl class="facts">
+        <div><dt>2+ years</dt><dd>in performance creatives: video and static for FB and Google</dd></div>
+        <div><dt>Tier 1–3</dt><dd>geos from US, UK and AU to Europe, Latin America and Turkey, 7 languages</dd></div>
+        <div><dt>Full funnel</dt><dd>video, static, store screenshots, prelanders and landings</dd></div>
+        <div><dt>10+ designers</dt><dd>in the creative team I led: briefs, reviews, workshops</dd></div>
+      </dl>
+    </div>
+    <div class="phones" aria-label="Video creative examples">
+      <div class="phone"><video data-auto muted loop playsinline preload="metadata" poster="media/poster/crypto_app.webp" src="media/video/crypto_app.mp4" aria-label="Crypto, UGC story"></video><span class="phone-tag">Crypto, UGC</span></div>
+      <div class="phone"><video data-auto muted loop playsinline preload="metadata" poster="media/poster/gambl_ad.webp" src="media/video/gambl_ad.mp4" aria-label="Gambling, brand spot"></video><span class="phone-tag">Gambling, US</span></div>
+      <div class="phone phone-land"><div class="screen"><img src="media/shot/blue_m.webp" alt="Investment platform landing on a phone"></div><span class="phone-tag">Landing, crypto</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Creative breakdowns</h2>
+      <p class="lead">I build every creative from the same parts: hook, trust, offer, CTA. The timeline under each description shows where each part sits. Click a segment to jump to that moment in the video.</p>
+    </div>
+
+    <article class="case">
+      <div class="player">
+        <div class="frame v"><video id="c1" muted playsinline preload="metadata" poster="media/poster/gambl_ad.webp" src="media/video/gambl_ad.mp4"></video>
+          <div class="ctrl"><button class="icon-btn" data-sound aria-label="Turn sound on"></button></div>
+        </div>
+      </div>
+      <div>
+        <div class="meta"><span class="chip">Gambling</span><span class="chip">US</span><span class="chip">9:16</span><span class="chip">24 s</span><span class="chip">app install</span></div>
+        <h3>Casino brand spot with a promo offer</h3>
+        <dl>
+          <div><dt>Task</dt><dd>An app-install creative for a US casino that doesn’t look like yet another “spinning slots” ad and builds trust in the brand.</dd></div>
+          <div><dt>Approach</dt><dd>Big-brand delivery: a charismatic host, a question with the casino’s name in the first frame, the offer spoken and repeated in captions. The app is shown in the store, and the ending leads straight to the App Store and Google Play.</dd></div>
+          <div><dt>What I did</dt><dd>Editing, animated captions with highlight plates, the store screen insert, and an end card with store buttons.</dd></div>
+        </dl>
+        <div class="timeline" data-for="c1">
+          <p class="tl-label">Video structure</p>
+          <div class="tl">
+            <button class="seg" style="--w:3" data-s="0" data-e="3" data-note="The first frame is a question with the brand name. It hooks people who know the brand and intrigues those who don’t."><span class="t">0–3 s</span><b>Hook</b></button>
+            <button class="seg" style="--w:7" data-s="3" data-e="10" data-note="The offer comes right after the hook: $1500 for new players who sign up, in voice and text."><span class="t">3–10 s</span><b>Offer</b></button>
+            <button class="seg" style="--w:7" data-s="10" data-e="17" data-note="The product: the app’s store page and the idea that you can play from your phone."><span class="t">10–17 s</span><b>Product</b></button>
+            <button class="seg" style="--w:7.5" data-s="17" data-e="24.5" data-note="Logo and store buttons. The CTA is short: one word and a clear action."><span class="t">17–24 s</span><b>CTA</b></button>
+            <span class="head"></span>
+          </div>
+          <p class="tl-note" aria-live="polite"></p>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="player">
+        <div class="frame v"><video id="c2" muted playsinline preload="metadata" poster="media/poster/crypto_app.webp" src="media/video/crypto_app.mp4"></video>
+          <div class="ctrl"><button class="icon-btn" data-sound aria-label="Turn sound on"></button></div>
+        </div>
+      </div>
+      <div>
+        <div class="meta"><span class="chip">Crypto</span><span class="chip">EN</span><span class="chip">9:16</span><span class="chip">66 s</span><span class="chip">warming up a cold audience</span></div>
+        <h3>UGC story with an app demo</h3>
+        <dl>
+          <div><dt>Task</dt><dd>A long video for a cold audience: explain how the investing app works and get people to download it.</dd></div>
+          <div><dt>Approach</dt><dd>It opens with someone else’s “success story” in a TikTok interface, followed by an article as a source of trust. Then a host in a circle frame names the pain point, and the app is shown in action: choosing an amount and term, trades, income. The viewer sees how it works, not just a promise.</dd></div>
+          <div><dt>What I did</dt><dd>The video structure, the interface mockups (social feed, article, app screens), motion for cards and charts, the host circle, captions.</dd></div>
+        </dl>
+        <div class="timeline" data-for="c2">
+          <p class="tl-label">Video structure</p>
+          <div class="tl">
+            <button class="seg" style="--w:8" data-s="0" data-e="8" data-note="The hook sits in a native social media interface: the video looks like content, not an ad."><span class="t">0–8 s</span><b>Hook</b></button>
+            <button class="seg" style="--w:9" data-s="8" data-e="17" data-note="An article as a source of trust: the story is “confirmed” by a third party."><span class="t">8–17 s</span><b>Trust</b></button>
+            <button class="seg" style="--w:8" data-s="17" data-e="25" data-note="The host names the pain: complicated strategies and confusing tools."><span class="t">17–25 s</span><b>Pain</b></button>
+            <button class="seg" style="--w:32" data-s="25" data-e="57" data-note="The longest part is the demo: amount, term, trades, income. This is where the “but how does it work” objection goes away."><span class="t">25–57 s</span><b>Product demo</b></button>
+            <button class="seg" style="--w:8.6" data-s="57" data-e="65.6" data-note="Download now on the app screen: the CTA appears right where the viewer just saw the result."><span class="t">57–66 s</span><b>CTA</b></button>
+            <span class="head"></span>
+          </div>
+          <p class="tl-note" aria-live="polite"></p>
+        </div>
+      </div>
+    </article>
+
+    <article class="case wide">
+      <div class="player">
+        <div class="frame s"><video id="c3" muted playsinline preload="metadata" poster="media/poster/gambl_news.webp" src="media/video/gambl_news.mp4"></video>
+          <div class="ctrl"><button class="icon-btn" data-sound aria-label="Turn sound on"></button></div>
+        </div>
+      </div>
+      <div>
+        <div class="meta"><span class="chip">Gambling</span><span class="chip">US</span><span class="chip">1:1</span><span class="chip">21 s</span><span class="chip">news format</span></div>
+        <h3>News format for an online casino launch</h3>
+        <dl>
+          <div><dt>Task</dt><dd>Say briefly and convincingly that the casino is now available online, in a feed where people scroll past ads in a second.</dd></div>
+          <div><dt>Approach</dt><dd>Delivered as a news broadcast: intro, anchor, guest, footage of wins. The news format holds attention on its own and doesn’t feel like an ad.</dd></div>
+          <div><dt>What I did</dt><dd>The broadcast graphics (intro, lower thirds, ticker), editing, timing and the square composition.</dd></div>
+        </dl>
+        <div class="timeline" data-for="c3">
+          <p class="tl-label">Video structure</p>
+          <div class="tl">
+            <button class="seg" style="--w:2.5" data-s="0" data-e="2.5" data-note="The broadcast intro: a familiar news rhythm in the first seconds."><span class="t">0–2 s</span><b>Hook</b></button>
+            <button class="seg" style="--w:3.5" data-s="2.5" data-e="6" data-note="The main message in the lower third: the casino is officially online, US only."><span class="t">3–6 s</span><b>News</b></button>
+            <button class="seg" style="--w:5" data-s="6" data-e="11" data-note="A guest on screen: a face that “confirms” the news."><span class="t">6–11 s</span><b>Guest</b></button>
+            <button class="seg" style="--w:7" data-s="11" data-e="18" data-note="Proof: footage of slots and cash wins."><span class="t">11–18 s</span><b>Proof</b></button>
+            <button class="seg" style="--w:3.2" data-s="18" data-e="21.2" data-note="The intro repeats at the end, which suits looped playback."><span class="t">18–21 s</span><b>Ending</b></button>
+            <span class="head"></span>
+          </div>
+          <p class="tl-note" aria-live="polite"></p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="video">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Video</h2>
+      <p class="lead">Hover to preview without sound. Click to open with sound.</p>
+    </div>
+    <div class="vgrid">
+      <div role="button" tabindex="0" class="vcard r916" data-lb="media/video/gambl_ad.mp4" data-cap="Gambling, US. Brand spot with an offer">
+        <span class="thumb"><video muted loop playsinline preload="none" poster="media/poster/gambl_ad.webp" src="media/video/gambl_ad.mp4"></video><span class="play"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M2 1l9 5-9 5z"/></svg>0:24</span></span>
+        <span class="cap-t">Casino brand spot</span><span class="cap-s">Gambling, US, 9:16</span>
+      </div>
+      <div role="button" tabindex="0" class="vcard r916" data-lb="media/video/crypto_app.mp4" data-cap="Crypto, EN. UGC story with an app demo">
+        <span class="thumb"><video muted loop playsinline preload="none" poster="media/poster/crypto_app.webp" src="media/video/crypto_app.mp4"></video><span class="play"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M2 1l9 5-9 5z"/></svg>1:06</span></span>
+        <span class="cap-t">UGC story with a demo</span><span class="cap-s">Crypto, EN, 9:16</span>
+      </div>
+      <div role="button" tabindex="0" class="vcard r916" data-lb="media/video/CTA_lottery.mp4" data-cap="Gambling, BE. End scene with a promo timer">
+        <span class="thumb"><video muted loop playsinline preload="none" poster="media/poster/CTA_lottery.webp" src="media/video/CTA_lottery.mp4"></video><span class="play"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M2 1l9 5-9 5z"/></svg>0:05</span></span>
+        <span class="cap-t">CTA with a promo timer</span><span class="cap-s">Gambling, BE, 9:16, end scene for a video</span>
+      </div>
+      <div role="button" tabindex="0" class="vcard r916" data-lb="media/video/gambl_celebrity_ad.mp4" data-cap="Gambling, US. Celebrity format">
+        <span class="thumb"><video muted loop playsinline preload="none" poster="media/poster/gambl_celebrity_ad.webp" src="media/video/gambl_celebrity_ad.mp4"></video><span class="play"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M2 1l9 5-9 5z"/></svg>0:33</span></span>
+        <span class="cap-t">Celebrity format</span><span class="cap-s">Gambling, US, 1:1</span>
+      </div>
+      <div role="button" tabindex="0" class="vcard r11" data-lb="media/video/crypto_ad.mp4" data-cap="Crypto, NL. Day-by-day growth in the app interface">
+        <span class="thumb"><video muted loop playsinline preload="none" poster="media/poster/crypto_ad.webp" src="media/video/crypto_ad.mp4"></video><span class="play"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M2 1l9 5-9 5z"/></svg>0:22</span></span>
+        <span class="cap-t">Day-by-day growth in the app</span><span class="cap-s">Crypto, NL, 1:1</span>
+      </div>
+      <div role="button" tabindex="0" class="vcard r11" data-lb="media/video/gambl_news.mp4" data-cap="Gambling, US. News format">
+        <span class="thumb"><video muted loop playsinline preload="none" poster="media/poster/gambl_news.webp" src="media/video/gambl_news.mp4"></video><span class="play"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M2 1l9 5-9 5z"/></svg>0:21</span></span>
+        <span class="cap-t">News format</span><span class="cap-s">Gambling, US, 1:1</span>
+      </div>
+      <div role="button" tabindex="0" class="vcard r11" data-lb="media/video/crypto_movie.mp4" data-cap="Crypto, ES. 4:43 long-form video for YouTube and prelanders" style="grid-column:span 4">
+        <span class="thumb"><video muted loop playsinline preload="none" poster="media/poster/crypto_movie.webp" src="media/video/crypto_movie.mp4"></video><span class="play"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M2 1l9 5-9 5z"/></svg>4:43</span></span>
+        <span class="cap-t">Long-form 16:9 video</span><span class="cap-s">Crypto, ES, for YouTube and prelanders</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="static" class="light">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Static</h2>
+      <p class="lead">Banners for feeds, stories and native placements, plus screenshots for app store pages.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter by vertical">
+      <button aria-pressed="true" data-f="all">All</button>
+      <button aria-pressed="false" data-f="gambling">Gambling</button>
+      <button aria-pressed="false" data-f="crypto">Crypto</button>
+      <button aria-pressed="false" data-f="store">Store screenshots</button>
+    </div>
+    <div class="masonry" id="masonry"></div>
+    <button class="btn ghost more-btn" id="more" hidden>Show more</button>
+  </div>
+</section>
+
+<section id="landings">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Landings & websites</h2>
+      <p class="lead">The creative makes a promise, and the landing page has to deliver on it. That’s why I also handle the second half of the funnel. The structure, copy and design are mine, and I build the code with Claude, so a landing for a new creative doesn’t wait in a developer’s queue. Hover over a preview to scroll the page.</p>
+    </div>
+    <div class="lands">
+      <article class="land">
+        <div class="devices">
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="scroller"><img src="media/shot/blue_d.webp" alt="Crypto landing: desktop" loading="lazy"></div></div>
+          <div class="mob"><div class="scroller"><img src="media/shot/blue_m.webp" alt="Crypto landing: mobile" loading="lazy"></div></div>
+        </div>
+        <div>
+          <span class="kind">Landing, crypto, EN</span>
+          <h3>Investment platform landing with an income calculator</h3>
+          <p>Sign-up form above the fold, exchange logos, steps, a calculator, a reviews slider and a thank-you page. Phone field with a country picker and a mask for each geo.</p>
+          <div class="stack"><span>design in Figma</span><span>responsive</span><span>phone mask per geo</span></div>
+        </div>
+      </article>
+      <article class="land">
+        <div class="devices">
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="scroller"><img src="media/shot/quiz_d.webp" alt="Quiz prelander: desktop" loading="lazy"></div></div>
+          <div class="mob"><div class="scroller"><img src="media/shot/quiz_m.webp" alt="Quiz prelander: mobile" loading="lazy"></div></div>
+        </div>
+        <div>
+          <span class="kind">Quiz prelander, crypto, MX</span>
+          <h3>“Personal plan” quiz before the main landing</h3>
+          <p>15 questions in 4 minutes, reviews, a platform section and steps. The quiz warms users up and filters out the wrong audience before sign-up.</p>
+          <div class="stack"><span>quiz structure</span><span>Tilda</span><span>Spanish</span></div>
+        </div>
+      </article>
+      <article class="land">
+        <div class="devices">
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="scroller"><img src="media/shot/hyakki_d.webp" alt="“Hyakki” site: desktop" loading="lazy"></div></div>
+          <div class="mob"><div class="scroller"><img src="media/shot/hyakki_m.webp" alt="“Hyakki” site: mobile" loading="lazy"></div></div>
+        </div>
+        <div>
+          <span class="kind">Personal project</span>
+          <h3>“Hyakki”: a guide to Japanese yokai</h3>
+          <p>A site that sells access to my own guide. The concept, copy and design are mine, and the code was built together with Claude: offer, article previews, sign-up form, cookie banner, analytics plan and a 404 page.</p>
+          <div class="stack"><span>built with Claude</span><span>GitHub Pages</span><span>Yandex Metrica and GA4</span></div>
+          <div class="links"><a class="btn sm" href="https://mprav-cld.github.io/hyakki-yokai/" target="_blank" rel="noopener">Open site</a><a class="btn sm ghost" href="https://github.com/mprav-cld/hyakki-yokai" target="_blank" rel="noopener">Code on GitHub</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="light">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How I work with media buyers</h2>
+      <p class="lead">A good creative almost always starts with a conversation with the media buyer. My process:</p>
+    </div>
+    <ol class="steps">
+      <li><b>Brief</b><p>Offer, audience, geo, what has already been tested and what worked. If something is missing, I ask.</p></li>
+      <li><b>Ideas</b><p>I check spy tools and past results and suggest an angle: benefit, urgency, pain or trust.</p></li>
+      <li><b>Variations</b><p>Not 1–2 creatives, but 5–10 variations of the hook and angle per hypothesis.</p></li>
+      <li><b>Analysis</b><p>What worked and why. I look at the whole funnel, not just the final number.</p></li>
+      <li><b>Iterations</b><p>I double down on what worked, drop what didn’t, and test again.</p></li>
+    </ol>
+
+    <div class="split">
+      <div>
+        <h3 style="margin-bottom:20px">I read feedback as metrics</h3>
+        <p class="lead" style="margin-bottom:20px;font-size:17px">I look at where the creative loses people and fix exactly that part.</p>
+        <table class="diag">
+          <thead><tr><th scope="col">What I see</th><th scope="col">What I change</th></tr></thead>
+          <tbody>
+            <tr><td>Low hook rate</td><td>The first 3 seconds: frame, question, motion</td></tr>
+            <tr><td>Hook works, hold rate is low</td><td>The middle: cut the slow parts, speed up the pace</td></tr>
+            <tr><td>They watch but don’t click</td><td>The offer and CTA</td></tr>
+            <tr><td>They click but don’t sign up</td><td>The creative-to-landing match: the promise must line up</td></tr>
+            <tr><td>CTR drops over time</td><td>Ad fatigue: I iterate on the same idea</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tools">
+        <h3>Tools</h3>
+        <div><h4>Video and motion</h4><ul><li>After Effects</li><li>CapCut</li><li>Photoshop</li></ul></div>
+        <div><h4>AI in production</h4><ul><li class="ai">Seedance</li><li class="ai">Kling</li><li class="ai">Higgsfield</li><li class="ai">Fish Audio</li><li class="ai">ElevenLabs</li><li class="ai">Figma Weave</li></ul></div>
+        <div><h4>Design and landings</h4><ul><li>Figma</li><li>Tilda</li><li>Built with Claude</li></ul></div>
+        <div><h4>Analysis</h4><ul><li>Spy tools</li><li>Media buyer feedback</li><li>CRM reports</li></ul></div>
+        <p style="color:var(--muted);font-size:15px">I build node-based pipelines: generation, voiceover and assembly are linked in one chain, so one idea quickly turns into many variations for testing.</p>
+      </div>
+    </div>
+
+    <div class="workshop">
+      <div>
+        <h3>Teaching the team to read feedback</h3>
+        <p>I ran a workshop for the creative team: what a creative is made of, what makes a creative successful in affiliate marketing, what the process looks like from brief to iteration, and how communication with the media buyer affects results. The slides are in Russian.</p>
+      </div>
+      <figure class="slides">
+        <div class="main"><img id="slide-main" src="media/ws/ws-3.webp" alt="Workshop slide: what a creative is made of"></div>
+        <div class="row" role="group" aria-label="Workshop slides"></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <figure class="portrait"><img src="media/img/maria.webp" alt="Maria Pravosudova" width="800" height="1000" loading="lazy"></figure>
+    <div class="txt">
+      <h2>About</h2>
+      <p class="lead">I’m a historian by training (Novosibirsk State University, 2022). Working with sources turned out to be good training for performance marketing: figuring out why someone else’s creative works is the same kind of source analysis.</p>
+      <p>Since 2024 I’ve been making video and static creatives for gambling and crypto, with some nutra. For six months I led a creative team of 10+ designers: I interviewed motion designers, onboarded newcomers, introduced the team’s first KPI system, and ran brainstorms with media buyers and workshops.</p>
+      <p>I’m looking for a motion designer, creative designer or creative producer role in a performance team. I know the producer side from my time as a team lead: briefs from media buyers, assigning tasks, managing deadlines and quality, iterating on metrics. And I keep making creatives myself.</p>
+      <p>Russian native, English B2.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Need a designer for your creative team?</h2>
+    <div class="actions">
+      <a class="btn" href="https://t.me/mkwutro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13 1.4 11.5c-1-.3-1.1-1 .2-1.5L20.5 2.8c.9-.3 1.6.2 1.4 1.5z"/></svg>Message me on Telegram</a>
+      <a class="btn ghost" href="files/Pravosudova_Maria_CV.pdf" download>Download CV (RU)</a>
+    </div>
+    <div class="contact-list">
+      <div><span>Telegram</span><a href="https://t.me/mkwutro" target="_blank" rel="noopener">@mkwutro</a></div>
+      <div><span>Email</span><a href="mailto:mprav.wrk@gmail.com">mprav.wrk@gmail.com</a></div>
+      <div><span>Format</span>Remote, full-time</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>Maria Pravosudova, 2026</span><span>Brands and platforms shown belong to their owners. Some projects are under NDA.</span></div></footer>
+
+<div class="dock" id="dock"><a class="btn" href="https://t.me/mkwutro" target="_blank" rel="noopener">Message me on Telegram</a></div>
+
+<dialog class="lb" id="lb" aria-label="Viewer">
+  <div class="lb-inner">
+    <button class="close" aria-label="Close">×</button>
+    <div id="lb-body"></div>
+    <p class="lb-cap" id="lb-cap"></p>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hoverable = matchMedia('(hover: hover)').matches;
+
+  // header border + dock hide near contact
+  const top = document.getElementById('top'), dock = document.getElementById('dock');
+  const contact = document.getElementById('contact');
+  addEventListener('scroll', () => { top.classList.toggle('scrolled', scrollY > 8); }, {passive:true});
+  new IntersectionObserver(([e]) => dock.classList.toggle('hide', e.isIntersecting), {threshold:.1}).observe(contact);
+
+  // hero autoplay (only when visible, not with reduced motion)
+  const auto = document.querySelectorAll('video[data-auto]');
+  if (!reduce) {
+    const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? e.target.play().catch(()=>{}) : e.target.pause()), {threshold:.25});
+    auto.forEach(v => io.observe(v));
+  }
+
+  // hero landing phone: scroll distance
+  const pl = document.querySelector('.phone-land .screen');
+  const setSh = () => pl && pl.style.setProperty('--sh', pl.clientHeight + 'px');
+  setSh(); addEventListener('resize', setSh);
+
+  // icons
+  const ICON_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m22 9-6 6M16 9l6 6"/></svg>';
+  const ICON_ON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>';
+
+  // case timelines
+  document.querySelectorAll('.timeline').forEach(tl => {
+    const v = document.getElementById(tl.dataset.for);
+    const segs = [...tl.querySelectorAll('.seg')];
+    const head = tl.querySelector('.head'), note = tl.querySelector('.tl-note');
+    const snd = v.parentElement.querySelector('[data-sound]');
+    snd.innerHTML = ICON_OFF;
+    snd.addEventListener('click', () => {
+      v.muted = !v.muted; snd.innerHTML = v.muted ? ICON_OFF : ICON_ON;
+      snd.setAttribute('aria-label', v.muted ? 'Turn sound on' : 'Turn sound off');
+      if (v.paused) v.play().catch(()=>{});
+    });
+    v.addEventListener('click', () => v.paused ? v.play().catch(()=>{}) : v.pause());
+    let current = -1;
+    const mark = i => {
+      if (i === current) return; current = i;
+      segs.forEach((s, j) => s.classList.toggle('on', j === i));
+      note.textContent = i >= 0 ? segs[i].dataset.note : '';
+    };
+    const update = () => {
+      const d = v.duration || +segs.at(-1).dataset.e, t = v.currentTime;
+      head.style.left = (t / d * 100) + '%';
+      mark(segs.findIndex(s => t >= +s.dataset.s && t < +s.dataset.e));
+    };
+    v.addEventListener('timeupdate', update);
+    v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(()=>{}); });
+    segs.forEach((s, i) => s.addEventListener('click', () => {
+      v.currentTime = +s.dataset.s + .05; mark(i); update(); v.play().catch(()=>{});
+    }));
+    mark(0);
+    if (!reduce) new IntersectionObserver(([e]) => e.isIntersecting ? v.play().catch(()=>{}) : v.pause(), {threshold:.5}).observe(v);
+  });
+
+  // lightbox
+  const lb = document.getElementById('lb'), lbBody = document.getElementById('lb-body'), lbCap = document.getElementById('lb-cap');
+  const openLb = (html, cap) => { lbBody.innerHTML = html; lbCap.textContent = cap || ''; lb.showModal(); };
+  lb.addEventListener('close', () => { lbBody.innerHTML = ''; });
+  lb.querySelector('.close').addEventListener('click', () => lb.close());
+  lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+
+  // sensitive reveal
+  const bindReveal = root => root.querySelectorAll('.reveal').forEach(r => {
+    const go = e => { e.stopPropagation(); e.preventDefault(); r.closest('.sens').classList.add('shown'); };
+    r.addEventListener('click', go);
+    r.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') go(e); });
+  });
+
+  // video cards
+  document.querySelectorAll('.vcard').forEach(c => {
+    const v = c.querySelector('video');
+    if (hoverable && !reduce) {
+      c.addEventListener('mouseenter', () => { if (!c.classList.contains('sens') || c.classList.contains('shown')) v.play().catch(()=>{}); });
+      c.addEventListener('mouseleave', () => v.pause());
+    }
+    const open = () => {
+      if (c.classList.contains('sens') && !c.classList.contains('shown')) return;
+      openLb(`<video src="${c.dataset.lb}" controls autoplay playsinline></video>`, c.dataset.cap);
+    };
+    c.addEventListener('click', open);
+    c.addEventListener('keydown', e => { if (e.target === c && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); open(); } });
+  });
+  bindReveal(document);
+
+  // static gallery
+  const ST = [
+    ['gambl_app_promo_6','gambling','US','Social proof: top winners','w2 h2'],
+    ['crypto_FB_promo_notification','crypto','EN','Native notification format',''],
+    ['gambl_CTA_image','gambling','IT','9:16, bonus on a phone screen','h2'],
+    ['gambl_app_promo_3','gambling','IT','Illustration and benefits checklist',''],
+    ['crypto_age_image','crypto','AU','Speaking to an older audience','w2'],
+    ['crypto_age_image_2','crypto','UK','Age picker as a micro-quiz',''],
+    ['crypto_news','crypto','ES','Native ad in article format',''],
+    ['gambl_app_promo_4','gambling','DE','Football news hook','w2 h2'],
+    ['gambl_app_promo_1','gambling','TR','Meme character and store',''],
+    ['crypto_news_au','crypto','AU','Native ad styled as a news site',''],
+    ['app_images_black_ver','store','EN','Store screenshots (original)','w2 fit'],
+    ['gambl_app_promo_5','gambling','US','State-level geo targeting',''],
+    ['crypto_celebrity_promo','crypto','NL','Expert and a list of benefits',''],
+    ['crypto_celebrity_scandal','crypto','UK','On-air scandal','w2 h2'],
+    ['gambl_app_promo_2','gambling','IT','Local casino and offer',''],
+    ['crypto_celebrities','crypto','HR','Celebrity gossip','w2'],
+    ['gambl_app_promo_7','gambling','US','Brand and bonus',''],
+    ['crypto_celebrities_scandal','crypto','UK','On-air scandal, 4:5',''],
+    ['crypto_celebrity_police','crypto','UK','Scandal news hook',''],
+    ['app_images','store','US','Store screenshots','w2 fit'],
+    ['app_images_white_ver','store','EN','Store screenshots (white version)','w2 fit'],
+  ];
+  const vLabel = {gambling:'Gambling',crypto:'Crypto',store:'Store'};
+  const m = document.getElementById('masonry');
+  m.innerHTML = ST.map(([f,cat,geo,t,size]) => `
+    <figure class="st ${size}" data-cat="${cat}">
+      <div class="thumb" tabindex="0" role="button" aria-label="Open: ${t}" data-src="media/img/${f}.webp" data-cap="${vLabel[cat]}, ${geo}. ${t}">
+        <img src="media/img/${f}.webp" alt="${t}" loading="lazy">
+      </div>
+      <figcaption><b>${t}</b><span>${vLabel[cat]}, ${geo}</span></figcaption>
+    </figure>`).join('');
+  bindReveal(m);
+  m.querySelectorAll('.thumb').forEach(th => {
+    const open = () => { const f = th.closest('.st'); if (f.classList.contains('sens') && !f.classList.contains('shown')) return; openLb(`<img src="${th.dataset.src}" alt="">`, th.dataset.cap); };
+    th.addEventListener('click', open);
+    th.addEventListener('keydown', e => { if (e.key === 'Enter') open(); });
+  });
+  const more = document.getElementById('more'), small = matchMedia('(max-width:700px)');
+  let filter = 'all', expanded = false;
+  const apply = () => {
+    const match = [...m.querySelectorAll('.st')].filter(f => { const ok = filter === 'all' || f.dataset.cat === filter; f.hidden = !ok; return ok; });
+    const limit = small.matches && !expanded ? 6 : Infinity;
+    match.forEach((f, i) => { if (i >= limit) f.hidden = true; });
+    const rest = match.length - Math.min(limit, match.length);
+    more.hidden = rest <= 0; more.textContent = `Show ${rest} more`;
+  };
+  more.addEventListener('click', () => { expanded = true; apply(); });
+  small.addEventListener('change', apply);
+  document.querySelectorAll('.filters button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.filters button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    filter = b.dataset.f; expanded = false; apply();
+  }));
+  apply();
+
+  // workshop slides
+  const WS = [[3,'What a creative is made of'],[1,'Workshop goals'],[4,'What a successful creative is'],[5,'How a creative is made'],[6,'Designer and media buyer communication'],[7,'How communication affects results']];
+  const row = document.querySelector('.slides .row'), main = document.getElementById('slide-main');
+  row.innerHTML = WS.map(([n,t],i) => `<button aria-label="${t}" ${i?'':'aria-current="true"'} data-n="${n}" data-t="${t}"><img src="media/ws/ws-${n}.webp" alt="" loading="lazy"></button>`).join('');
+  row.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+    row.querySelectorAll('button').forEach(x => x.removeAttribute('aria-current'));
+    b.setAttribute('aria-current','true'); main.src = `media/ws/ws-${b.dataset.n}.webp`; main.alt = 'Workshop slide: ' + b.dataset.t;
+  }));
+})();
+</script>
+</body>
+</html>
